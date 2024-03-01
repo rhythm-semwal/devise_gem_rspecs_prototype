@@ -28,6 +28,7 @@ class IterableService
              .with(body: { user_id: user_id })
              .to_return(status: 200, body: '{"status": "success"}', headers: { 'Content-Type': 'application/json' })
 
+      Rails.logger.error("Event #{event_type} Creation Successful for user #{user_id}")
       # Actual API request (comment this line out during testing)
       # response = RestClient.post(event_api_url, { user_id: user_id }, headers: { 'Api-Key': API_KEY })
 
@@ -59,6 +60,7 @@ class IterableService
              .with(body: { user_id: user_id })
              .to_return(status: 200, body: '{"status": "success"}', headers: { 'Content-Type': 'application/json' })
 
+      Rails.logger.error("Email notification sent for #{user_id}")
       # Actual API request (comment this line out during testing)
       # response = RestClient.post(api_url, { user_id: user_id }, headers: { 'Api-Key': API_KEY })
 
