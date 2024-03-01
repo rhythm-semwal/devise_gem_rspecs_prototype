@@ -35,7 +35,10 @@
 5. Access the Application:
 
     Open a web browser.
-        Visit http://localhost:3000 to access the running application.
+
+   http://localhost:3000  -> Visit  to access the running application.
+
+   http://localhost:3000/events  -> Visit  to access the running application.
 
 6. Running Tests:
     Run RSpec Tests:
