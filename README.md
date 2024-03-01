@@ -38,7 +38,7 @@
 
    http://localhost:3000  -> Visit  to access the running application.
 
-   http://localhost:3000/events  -> Visit  to access the running application.
+   http://localhost:3000/events  -> Visit  to create events.
 
 6. Running Tests:
     Run RSpec Tests:
