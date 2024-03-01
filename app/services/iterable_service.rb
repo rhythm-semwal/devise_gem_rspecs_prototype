@@ -35,6 +35,7 @@ class IterableService
       # result = JSON.parse(response.body)
       # puts "Event #{event_type} for user #{user_id}, Response: #{result}"
 
+      # If scalability is a concern, we can leverage background job processing for sending email notification
       send_email_notification(user_id) if event_type == 'B'
 
     rescue RestClient::ExceptionWithResponse => e
@@ -78,13 +79,17 @@ class IterableService
   #
   # @param exception [Exception] The exception object
   def self.handle_api_error(exception)
-    puts "API Error - Status Code: #{exception.response.code}, Error Message: #{exception.response.body}"
+    error_message = "API Error - Status Code: #{exception.response.code}, Error Message: #{exception.response.body}"
+    Rails.logger.error(error_message)
+    puts error_message
   end
 
   # Handle general errors
   #
   # @param exception [Exception] The exception object
   def self.handle_general_error(exception)
-    puts "Error: #{exception.message}"
+    error_message = "Error: #{exception.message}"
+    Rails.logger.error(error_message)
+    puts error_message
   end
 end
