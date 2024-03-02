@@ -36,9 +36,13 @@
 
     Open a web browser.
 
-   http://localhost:3000  -> Visit  to access the running application.
-
-   http://localhost:3000/events  -> Visit  to create events.
+   Signup using the below link
+   http://localhost:3000/users/sign_up
+   ![img_3.png](img_3.png)
+   
+   You would be redirected to the create events page
+   http://localhost:3000/events
+   ![img_4.png](img_4.png)
 
 6. Running Tests:
     Run RSpec Tests:
@@ -67,6 +71,4 @@ The decision to use mocks in this example prioritizes testing speed, isolation, 
 ************************
 Screenshots:
 
-![img.png](img.png)
-![img_1.png](img_1.png)
-![img_2.png](img_2.png)
+![img_6.png](img_6.png)
