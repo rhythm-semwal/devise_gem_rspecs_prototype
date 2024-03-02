@@ -63,3 +63,10 @@ Testing with Mocks vs. Integration Testing: We chose to use WebMock to mock the 
 We opted to prioritize testing the core logic of the service in isolation and avoiding external dependencies that could introduce instability during testing. This allows for faster and more reliable tests, which is crucial for rapid development and ensuring the service functions as expected. However, it's important to acknowledge that this doesn't replace the need for additional integration tests to ensure the service works seamlessly with the real Iterable API.
 
 The decision to use mocks in this example prioritizes testing speed, isolation, and maintainability while acknowledging the need for a broader testing strategy in a real-world application.
+
+************************
+Screenshots:
+
+![img.png](img.png)
+![img_1.png](img_1.png)
+![img_2.png](img_2.png)
