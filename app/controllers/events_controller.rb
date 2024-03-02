@@ -25,4 +25,9 @@ class EventsController < ApplicationController
 
     redirect_to events_path
   end
+
+  # def destroy_user_session
+  #   sign_out(current_user)
+  #   redirect_to new_user_session_path # Redirect to the sign-in page
+  # end
 end
