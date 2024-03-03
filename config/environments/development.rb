@@ -73,8 +73,8 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
   config.middleware.insert_after ActionDispatch::Flash, Warden::Manager do |manager|
-    manager.default_strategies(:scope => :user).unshift :database_authenticatable
-    # manager.failure_app = CustomFailureApp
+    # manager.default_strategies(:scope => :user).unshift :database_authenticatable
+    manager.failure_app = CustomFailureApp
   end
 
   # Uncomment if you wish to allow Action Cable access from any origin.

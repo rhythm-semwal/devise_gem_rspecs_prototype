@@ -7,10 +7,11 @@ Bundler.require(*Rails.groups)
 module IterableApiIntegration
   class Application < Rails::Application
     config.load_defaults 6.1
+    config.autoload_paths += %W(#{config.root}/lib)
     config.action_dispatch.rescue_responses['Warden::NotAuthenticated'] = :unauthorized
     config.middleware.insert_after ActionDispatch::Flash, Warden::Manager do |manager|
       manager.default_strategies(:scope => :user).unshift :database_authenticatable
-      # manager.failure_app = CustomFailureApp
+      manager.failure_app = CustomFailureApp
     end
   end
 end
