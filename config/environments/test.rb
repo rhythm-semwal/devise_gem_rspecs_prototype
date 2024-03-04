@@ -52,16 +52,6 @@ Rails.application.configure do
   # Tell Active Support which deprecation messages to disallow.
   config.active_support.disallowed_deprecation_warnings = []
 
-  config.middleware.use Warden::Manager
-
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-
-  config.middleware.insert_after ActionDispatch::Flash, Warden::Manager do |manager|
-    # manager.default_strategies(:scope => :user).unshift :database_authenticatable
-    manager.failure_app = CustomFailureApp
-  end
-
-
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 

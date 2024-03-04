@@ -1,13 +1,14 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!,  only: [:index]
 
-  # Display a list of events for the current user
+  # Display a list of events for the current users
   def index
+    puts "current_user = #{current_user.inspect}"
     @events = current_user.events
-    # You may want to load user data or perform other actions here
+    # You may want to load users data or perform other actions here
   end
 
-  # Create an event for the current user based on the specified event type
+  # Create an event for the current users based on the specified event type
   def create_event
     event_type = params[:event_type]
 
@@ -26,8 +27,10 @@ class EventsController < ApplicationController
     redirect_to events_path
   end
 
-  # def destroy_user_session
-  #   sign_out(current_user)
-  #   redirect_to new_user_session_path # Redirect to the sign-in page
-  # end
+  def destroy_user_session
+    puts  '********'
+    puts 'destroying user session'
+    sign_out(current_user)
+    redirect_to new_user_session_path # Redirect to the sign-in page
+  end
 end

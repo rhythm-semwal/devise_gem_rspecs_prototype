@@ -6,9 +6,9 @@ class IterableService
   BASE_URL = 'https://api.iterable.com/api'
   API_KEY = 'YOUR_API_KEY'  # Replace with the actual API key
 
-  # Public: Create an event for a user.
+  # Public: Create an event for a users.
   #
-  # user_id    - The ID of the user for whom the event is created.
+  # user_id    - The ID of the users for whom the event is created.
   # event_type - The type of the event ('A' or 'B').
   #
   # Raises ArgumentError if the event_type is invalid.
@@ -28,13 +28,13 @@ class IterableService
              .with(body: { user_id: user_id })
              .to_return(status: 200, body: '{"status": "success"}', headers: { 'Content-Type': 'application/json' })
 
-      Rails.logger.error("Event #{event_type} Creation Successful for user #{user_id}")
+      Rails.logger.error("Event #{event_type} Creation Successful for users #{user_id}")
       # Actual API request (comment this line out during testing)
       # response = RestClient.post(event_api_url, { user_id: user_id }, headers: { 'Api-Key': API_KEY })
 
       # Rest of the create_event method remains unchanged
       # result = JSON.parse(response.body)
-      # puts "Event #{event_type} for user #{user_id}, Response: #{result}"
+      # puts "Event #{event_type} for users #{user_id}, Response: #{result}"
 
       # If scalability is a concern, we can leverage background job processing for sending email notification
       send_email_notification(user_id) if event_type == 'B'
@@ -46,9 +46,9 @@ class IterableService
     end
   end
 
-  # Public: Send an email notification for a user.
+  # Public: Send an email notification for a users.
   #
-  # user_id - The ID of the user for whom the email notification is sent.
+  # user_id - The ID of the users for whom the email notification is sent.
   #
   # Returns nothing.
 

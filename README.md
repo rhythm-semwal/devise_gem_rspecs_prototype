@@ -1,58 +1,58 @@
 # README
 
 1. Setting Up the Rails Application:
-        Clone the Repository:
+   Clone the Repository:
 
-    Open a terminal.
-    Navigate to the directory where you want to clone the repository.
-        Run the following command to clone the repository:
-    
+   Open a terminal.
+   Navigate to the directory where you want to clone the repository.
+   Run the following command to clone the repository:
+
         git clone <repository_url>
 
 2. Install Dependencies:
 
-    Navigate into the project directory:
-        cd <project_directory>
-    
-    Run the following command to install the required gems:
+   Navigate into the project directory:
+   cd <project_directory>
+
+   Run the following command to install the required gems:
 
         bundle install
 
 3. Database Setup:
 
-    Run the following commands to set up the database:
+   Run the following commands to set up the database:
 
         rails db:create
         rails db:migrate
 
 4. Running the Rails Application:
-    Start the Server:
+   Start the Server:
 
-    Run the following command to start the Rails server:
+   Run the following command to start the Rails server:
 
-    `rails server`
+   `rails server`
 
 5. Access the Application:
 
-    Open a web browser.
+   Open a web browser.
 
    Signup using the below link
    http://localhost:3000/users/sign_up
    ![img_3.png](img_3.png)
-   
+
    You would be redirected to the create events page
    http://localhost:3000/events
    ![img_4.png](img_4.png)
 
 6. Running Tests:
-    Run RSpec Tests:
+   Run RSpec Tests:
 
-    Ensure that RSpec is installed (bundle install should have taken care of this).
-    Run the following command to execute RSpec tests:
-      
+   Ensure that RSpec is installed (bundle install should have taken care of this).
+   Run the following command to execute RSpec tests:
+
         bundle exe rspec
 
-    Check the terminal for test results and any failures.
+   Check the terminal for test results and any failures.
 
 **********************
 
@@ -71,4 +71,4 @@ The decision to use mocks in this example prioritizes testing speed, isolation, 
 ************************
 Screenshots:
 
-![img_6.png](img_6.png)
+![img_6.png](img_6.png)¯

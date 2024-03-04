@@ -14,8 +14,6 @@ Rails.application.configure do
   # Show full error reports.
   config.consider_all_requests_local = true
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
@@ -72,10 +70,6 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-  config.middleware.insert_after ActionDispatch::Flash, Warden::Manager do |manager|
-    # manager.default_strategies(:scope => :user).unshift :database_authenticatable
-    manager.failure_app = CustomFailureApp
-  end
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true

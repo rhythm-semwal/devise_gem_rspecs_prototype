@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+  <div> Welcome <%= current_user.email %> </div>
+  <%= button_to 'Create Event A', create_event_events_path(event_type: 'A'), method: :post %>
+  <%= button_to 'Create Event B', create_event_events_path(event_type: 'B'), method: :post %>
+
+  <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= button_to "Sign in", new_user_session_path %>
+<% end %>
