@@ -3,7 +3,6 @@ class EventsController < ApplicationController
 
   # Display a list of events for the current users
   def index
-    puts "current_user = #{current_user.inspect}"
     @events = current_user.events
     # You may want to load users data or perform other actions here
   end

@@ -7,7 +7,16 @@ RSpec.describe IterableService, type: :service do
     context "with valid event type 'B'" do
       let(:user_id) { 1 }
 
-      it "makes a successful POST request to the correct API endpoint and sends an email notification" do
+      it "makes a successful POST request to the correct API endpoint" do
+        WebMock.stub_request(:post, "https://api.iterable.com/api/events/create_event_b")
+               .with(body: { user_id: user_id })
+               .to_return(status: 200, body: '{"status": "success"}', headers: { 'Content-Type': 'application/json' })
+
+        # Invoke the method
+        IterableService.create_event(user_id, 'B')
+      end
+
+      it "sends an email notification" do
         WebMock.stub_request(:post, "https://api.iterable.com/api/events/create_event_b")
                .with(body: { user_id: user_id })
                .to_return(status: 200, body: '{"status": "success"}', headers: { 'Content-Type': 'application/json' })
@@ -23,7 +32,16 @@ RSpec.describe IterableService, type: :service do
     context "with valid event type 'A'" do
       let(:user_id) { 1 }
 
-      it "makes a successful POST request to the correct API endpoint and not sends an email notification" do
+      it "makes a successful POST request to the correct API endpoint" do
+        WebMock.stub_request(:post, "https://api.iterable.com/api/events/create_event_a")
+               .with(body: { user_id: user_id })
+               .to_return(status: 200, body: '{"status": "success"}', headers: { 'Content-Type': 'application/json' })
+
+        # Invoke the method
+        IterableService.create_event(user_id, 'A')
+      end
+
+      it "does not send email notification" do
         WebMock.stub_request(:post, "https://api.iterable.com/api/events/create_event_a")
                .with(body: { user_id: user_id })
                .to_return(status: 200, body: '{"status": "success"}', headers: { 'Content-Type': 'application/json' })
